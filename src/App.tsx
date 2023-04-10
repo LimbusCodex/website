@@ -5,4 +5,4 @@ export default ({}) => {
       <img src="https://assets.limbuscodex.com/test_identity/10204_normal_profile_support_personality.png" />
     </div>
   );
-}
+};
