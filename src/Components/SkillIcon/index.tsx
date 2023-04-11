@@ -40,6 +40,7 @@ export const SkillIcon = ({ id, sin, level, size = 256 }: Props) => {
     backgroundImage: `url(${frameSrc})`,
     backgroundPosition: "center",
     backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
     backgroundBlendMode: "multiply",
     backgroundColor: sin.color,
   };
