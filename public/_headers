@@ -6,5 +6,6 @@ https://:project.pages.dev/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   Permissions-Policy: document-domain=()
-  Content-Security-Policy: script-src 'self'; frame-ancestors 'none';
-  Content-Security-Policy: script-src static.cloudflareinsights.com; connect-src cloudflareinsights.com;
+  Content-Security-Policy: script-src 'self' static.cloudflareinsights.com
+  Content-Security-Policy: frame-ancestors 'none'
+  Content-Security-Policy: connect-src 'self' cloudflareinsights.com
