@@ -6,7 +6,7 @@ export default ({}) => {
     <div>
       <div>Hello, World!</div>
       <div className="flex justify-start">
-        <SkillIcon id={1020401} sin={Sin.VIOLET} level={3} size={196} />
+        <SkillIcon id={1020401} sin={Sin.VIOLET} level={1} size={196} />
         <SkillIcon id={1020402} sin={Sin.SCARLET} level={2} size={196} />
         <SkillIcon id={1020403} sin={Sin.INDIGO} level={3} size={196} />
         <SkillIcon id={1020404} sin={Sin.NONE} level={1} size={196} />
