@@ -1,7 +1,7 @@
-import React from 'react';
-import { Sin } from '../../Common';
-import maskSrc from './mask.png';
 import { AbsoluteCenter, Box, Image } from '@chakra-ui/react';
+import { Sin } from '../../Common';
+import { CSSProperties } from 'react';
+import maskSrc from './mask.png';
 
 type Props = {
   id: number;
@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const SkillIcon = ({ id, sin, level, size = 256 }: Props) => {
-  const innerMask: React.CSSProperties = {
+  const innerMask: CSSProperties = {
     WebkitMaskImage: `url(${maskSrc})`,
     WebkitMaskSize: `contain`,
     WebkitMaskPosition: "center",
@@ -22,8 +22,8 @@ export const SkillIcon = ({ id, sin, level, size = 256 }: Props) => {
     maskRepeat: "no-repeat",
   };
 
-  const frameSrc = "https://assets.limbuscodex.com/SkillFrame/" + sin.name + "/" + level + ".png";
-  const frameStyle: React.CSSProperties = {
+  const frameSrc = new URL(`./${sin.name}/${level}.png`, import.meta.url).href;
+  const frameStyle: CSSProperties = {
     WebkitMaskImage: `url(${frameSrc})`,
     WebkitMaskSize: "contain",
     WebkitMaskPosition: "center",
@@ -45,9 +45,9 @@ export const SkillIcon = ({ id, sin, level, size = 256 }: Props) => {
       <AbsoluteCenter zIndex={-20}>
         <Image
             src={"https://assets.limbuscodex.com/SkillIcon/" + id + ".png"}
-            style={innerMask} />
+            sx={innerMask} />
       </AbsoluteCenter>
-      <Box position="absolute" w="full" h="full" zIndex={-10} style={frameStyle} />
+      <Box position="absolute" w="full" h="full" zIndex={-10} sx={frameStyle} />
     </Box>
   );
 };
