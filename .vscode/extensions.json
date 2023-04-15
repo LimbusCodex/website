@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "mgmcdermott.vscode-language-babel",
+    "esbenp.prettier-vscode",
+    "eriklynd.json-tools"
+  ]
+}

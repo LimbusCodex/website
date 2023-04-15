@@ -11,4 +11,17 @@ export class Sin {
   private constructor(
       public readonly name: string,
       public readonly color: string) { }
+
+  public static all(): Sin[] {
+    return [
+      Sin.NONE,
+      Sin.AMBER,
+      Sin.AZURE,
+      Sin.CRIMSON,
+      Sin.INDIGO,
+      Sin.SCARLET,
+      Sin.SHAMROCK,
+      Sin.VIOLET
+    ];
+  }
 }

@@ -1,5 +1,6 @@
 {
   "include": ["src", "src/**/*.json"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "incremental": true,
     "composite": true,
@@ -15,6 +16,8 @@
       "ES2022",
       "ESNext"
     ],
+
+    "types": ["vite/client"],
 
     "resolveJsonModule": true,
     "esModuleInterop": true,

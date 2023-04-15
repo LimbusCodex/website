@@ -1,1 +1,1 @@
-export { SkillIcon } from "./SkillIcon";
+export { SkillCoin } from "./SkillCoin/";

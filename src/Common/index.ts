@@ -1,1 +1,1 @@
-export { Sin } from "./sin";
+export { Sin } from "./Sin";
