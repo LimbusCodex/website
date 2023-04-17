@@ -1,18 +1,11 @@
 {
+  "root": true,
   "env": {
     "browser": true,
-    "es2022": true
+    "node": true,
+    "es6": true
   },
-  "ignorePatterns": ["**/dist/*"],
-  "extends": [
-    // "prettier",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:storybook/recommended"
-  ],
-  "overrides": [
-  ],
+
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -20,22 +13,66 @@
     "project": "./tsconfig.json",
     "createDefaultProgram": true
   },
+  "ignorePatterns": [
+    "dist/*"
+  ],
+
   "plugins": [
+    "@typescript-eslint",
+    "import",
     "react",
     "react-hooks"
   ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/strict",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "settings": {
+    "react": { "version": "detect" },
+    "import/resolver": {
+      "typescript": true
+    }
+  },
+
   "rules": {
     "semi": "error",
+    "linebreak-style": ["error", "unix"],
+
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/default": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+
+    "react/react-in-jsx-scope": "off",
+
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true }],
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "react/display-name": "off",
-    "react/react-in-jsx-scope": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "@typescript-eslint/no-empty-function": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"]
   }
 }

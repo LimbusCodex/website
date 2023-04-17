@@ -1,9 +1,9 @@
-import { ConfigEnv, defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import { visualizer } from "rollup-plugin-visualizer";
 import react from '@vitejs/plugin-react';
+import { visualizer } from "rollup-plugin-visualizer";
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default ({}: ConfigEnv) => {
+export default () => {
   return defineConfig({
     plugins: [
       react(),
@@ -11,5 +11,5 @@ export default ({}: ConfigEnv) => {
       visualizer(),
     ],
     server: {}
-  })
-}
+  });
+};

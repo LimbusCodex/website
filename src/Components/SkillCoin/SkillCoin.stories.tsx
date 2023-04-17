@@ -1,7 +1,9 @@
-import { SkillCoin } from "./SkillCoin";
-import type { Meta, StoryObj } from '@storybook/react';
 import { SimpleGrid } from "@chakra-ui/react";
+import type { Meta, StoryObj } from '@storybook/react';
+
 import { Sin } from "../../Common";
+
+import { SkillCoin } from "./SkillCoin";
 
 const meta = {
   title: 'Components/SkillCoin',
@@ -36,7 +38,7 @@ export const AllFrames = () => (
   <SimpleGrid columns={6} justifyContent="start" gap={0} maxW={size * 6}>
       {frames.map(f => (
         <SkillCoin
-            key={f.sin.name + "-" + f.level}
+            key={`${f.sin.name}-${f.level}`}
             skillId={1020404}
             sin={f.sin}
             level={f.level}
