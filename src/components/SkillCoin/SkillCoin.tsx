@@ -1,11 +1,9 @@
 import { AbsoluteCenter, Box, Image, Square } from '@chakra-ui/react';
 import { CSSProperties, useEffect, useState } from 'react';
-
-import { Sin } from '@/Common';
-
-import blankSkill from './fallback.png';
-import maskSrc from './mask.png';
-import defaultFrame from './Neutral/1.png';
+import { Sin } from '@/types';
+import blankSkill from './assets/fallback.png';
+import maskSrc from './assets/mask.png';
+import defaultFrame from './assets/Neutral/1.png';
 
 
 export interface Props {

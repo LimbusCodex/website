@@ -1,8 +1,6 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Sin } from "../../Common";
-
+import { Sin } from "@/types";
 import { SkillCoin } from "./SkillCoin";
 
 const meta = {

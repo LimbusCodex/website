@@ -1,9 +1,8 @@
 import { Flex } from "@chakra-ui/react";
+import { SkillCoin } from "./components/SkillCoin";
+import { Sin } from "./types";
 
-import { Sin } from "./Common";
-import { SkillCoin } from "./Components";
-
-export const App = () => {
+const App = () => {
   return (
     <div>
       <div>Hello, stinky!</div>
@@ -17,3 +16,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;
