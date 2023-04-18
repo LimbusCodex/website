@@ -1,10 +1,9 @@
-import { AbsoluteCenter, Box, Image, Square } from '@chakra-ui/react';
+import { Box, Image, Square } from '@chakra-ui/react';
 import { CSSProperties, useEffect, useState } from 'react';
 import { Sin } from '@/types';
 import blankSkill from './assets/fallback.png';
 import maskSrc from './assets/mask.png';
 import defaultFrame from './assets/Neutral/1.png';
-
 
 export interface Props {
   skillId: number;
@@ -19,7 +18,7 @@ export const SkillCoin = ({ skillId, sin, level, size = 196 }: Props) => {
   useEffect(() => {
     // switch to the desired frame only if it exists, otherwise defaultFrame is used
     setFrameSrc(defaultFrame);
-    const desiredFrame = new URL(`./${sin.name}/${level}.png`, import.meta.url);
+    const desiredFrame = new URL(`./assets/${sin.name}/${level}.png`, import.meta.url);
     fetch(desiredFrame).then(
       resp => {
         if (resp.ok) {
@@ -31,10 +30,6 @@ export const SkillCoin = ({ skillId, sin, level, size = 196 }: Props) => {
   }, [sin.name, level]);
 
   const innerMask: CSSProperties = {
-    WebkitMaskImage: `url(${maskSrc})`,
-    WebkitMaskSize: `contain`,
-    WebkitMaskPosition: "center",
-    WebkitMaskRepeat: "no-repeat",
     maskImage: `url(${maskSrc})`,
     maskSize: `contain`,
     maskPosition: "center",
@@ -42,10 +37,6 @@ export const SkillCoin = ({ skillId, sin, level, size = 196 }: Props) => {
   };
 
   const frameStyle: CSSProperties = {
-    WebkitMaskImage: `url(${frameSrc})`,
-    WebkitMaskSize: "contain",
-    WebkitMaskPosition: "center",
-    WebkitMaskRepeat: "no-repeat",
     maskImage: `url(${frameSrc})`,
     maskSize: "contain",
     maskPosition: "center",
@@ -58,22 +49,24 @@ export const SkillCoin = ({ skillId, sin, level, size = 196 }: Props) => {
     backgroundColor: sin.color,
   };
 
-
-
   return (
     <Square
         position="relative"
         userSelect="none"
         pointerEvents="none"
         size={`${size}px`}
-        zIndex={-20}>
-      <AbsoluteCenter zIndex={-20}>
-        <Image
-            src={`https://assets.limbuscodex.com/SkillIcon/${skillId}.png`}
-            fallbackSrc={blankSkill}
-            sx={innerMask} />
-      </AbsoluteCenter>
-      <Box position="absolute" w="full" h="full" zIndex={-10} style={frameStyle} />
+        zIndex={-20}
+    >
+      <Image
+          src={`https://assets.limbuscodex.com/SkillIcon/${skillId}.png`}
+          fallbackSrc={blankSkill}
+          position="absolute"
+          w="50%"
+          h="50%"
+          zIndex={-20}
+          sx={innerMask}
+      />
+      <Box as="span" w="100%" h="100%" zIndex={-10} sx={frameStyle} />
     </Square>
   );
 };
